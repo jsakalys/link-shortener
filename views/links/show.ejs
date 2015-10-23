@@ -1,8 +1,9 @@
-<h1>Detailed Info</h1>
-
-<h1>
-Link ID: <%= item.id %><br />
-url: <a href="<%= item.url %>" target="_blank"><%= item.url %></a>
-</h1>
+<div>
+	<h1>
+	url: <a href="<%= item.url %>" target="_blank"><%= item.url %></a><br />
+	hash: <a href="/<%= item.hash %>" target="_blank"><%= item.hash %></a><br />
+	visits: <%= item.count %>
+	</h1>
+</div>
 
 
