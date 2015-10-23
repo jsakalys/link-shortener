@@ -20,7 +20,9 @@ app.get('/', function(req, res){
 });
 
 app.get('/links', function(req, res){
-	res.render('links/list');
+	db.link.findAll({order: 'count DESC'}).then(function(links) {
+  	res.render('links/list', {links: links});
+	});	
 });
 
 app.post('/links/', function(req, res) {
@@ -38,7 +40,7 @@ app.post('/links/', function(req, res) {
 });
 
 app.get('/links/:id', function(req, res) {
-	var linkID = parseInt(req.params.id);
+	var linkID = req.params.id;
 	db.link.findById(linkID).then(function(link) {
 	res.render('links/show', {item: link});
 	});

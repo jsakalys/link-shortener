@@ -1,1 +1,7 @@
-this is a list of links
+<h1>All links</h1>
+
+<ol>
+<% links.forEach(function(link){ %>
+	<li><%= link.url %> | <%= link.count %></li>
+<% }) %>
+</ol>
